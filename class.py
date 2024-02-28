@@ -25,6 +25,9 @@ class Member:
                 return member
         return None
 
+    def __str__(self):
+        return f"name: {self.name}, username: {self.username}"
+
 
 def new():
     name = input("이름을 입력해주세요: ")
@@ -78,23 +81,23 @@ post9 = Post('wonjocoffee', 'Backdabang', member3.username)
 
 new_member = new()
 
-# new_post = p_new()
+new_post = p_new()
 
 for member in Member.members:
-    print(f'member : {member.name}')
+    print(member)
 
 
-# for post in Post.posts:
-#     print(post)
+for post in Post.posts:
+    print(post)
 
-# for post in Post.posts:
-#     author_name = 'lead'
-#     if post.author == author_name:
-#         print(f'{post.title} by {author_name}')
+for post in Post.posts:
+    author_name = 'lead'
+    if post.author == author_name:
+        print(f'{post.title} by {author_name}')
 
-# for post in Post.posts:
-#     if 'SG' in post.content:
-#         print(post.title)
+for post in Post.posts:
+    if 'SG' in post.content:
+        print(post.title)
 
 for hash in dig:
     print(hash)
