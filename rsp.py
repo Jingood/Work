@@ -3,6 +3,14 @@ import random
 random_rsc = ["가위", "바위", "보"]
 
 
+def retry(user_input):
+    user_input = input("다시 하시겠습니까? (y/n): ")
+    if user_input == "y" or user_input == "Y":
+        return True
+    elif user_input == "n" or user_input == "N":
+        return False
+
+
 def rsc_game():
     win = 0
     lose = 0
@@ -22,60 +30,54 @@ def rsc_game():
         if user_input == "가위" and choicelists == "보":
             print("승")
             win = win + 1
-            user_input2 = input("다시 하시겠습니까? (y/n): ")
-            if user_input2 == "y" or user_input2 == 'Y':
+            if retry(user_input) == True:
                 continue
-            elif user_input2 == 'n' or user_input2 == 'N':
+            else:
                 print("승:", win, "패:", lose, "무:", draw)
                 break
 
         if user_input == "바위" and choicelists == "가위":
             print("승")
             win = win + 1
-            user_input2 = input("다시 하시겠습니까? (y/n): ")
-            if user_input2 == 'y' or user_input2 == 'Y':
+            if retry(user_input) == True:
                 continue
-            elif user_input2 == 'n' or user_input2 == 'N':
+            else:
                 print("승:", win, "패:", lose, "무:", draw)
                 break
 
         if user_input == "보" and choicelists == "바위":
             print("승")
             win = win + 1
-            user_input2 = input("다시 하시겠습니까? (y/n): ")
-            if user_input2 == 'y' or user_input2 == 'Y':
+            if retry(user_input) == True:
                 continue
-            elif user_input2 == 'n' or user_input2 == 'N':
+            else:
                 print("승:", win, "패:", lose, "무:", draw)
                 break
 
         if user_input == "가위" and choicelists == "바위":
             print("패")
             lose = lose + 1
-            user_input2 = input("재도전 하시겠습니까? (y/n): ")
-            if user_input2 == 'y' or user_input2 == 'Y':
+            if retry(user_input) == True:
                 continue
-            elif user_input2 == 'n' or user_input2 == 'N':
+            else:
                 print("승:", win, "패:", lose, "무:", draw)
                 break
 
         if user_input == "바위" and choicelists == "보":
             print("패")
             lose = lose + 1
-            user_input2 = input("재도전 하시겠습니까? (y/n): ")
-            if user_input2 == 'y' or user_input2 == 'Y':
+            if retry(user_input) == True:
                 continue
-            elif user_input2 == 'n' or user_input2 == 'N':
+            else:
                 print("승:", win, "패:", lose, "무:", draw)
                 break
 
         if user_input == "보" and choicelists == "가위":
             print("패")
             lose = lose + 1
-            user_input2 = input("재도전 하시겠습니까? (y/n): ")
-            if user_input2 == 'y' or user_input2 == 'Y':
+            if retry(user_input) == True:
                 continue
-            elif user_input2 == 'n' or user_input2 == 'N':
+            else:
                 print("승:", win, "패:", lose, "무:", draw)
                 break
 
